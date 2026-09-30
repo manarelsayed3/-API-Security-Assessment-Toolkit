@@ -1,0 +1,125 @@
+{
+    "target": "http://127.0.0.1:5000",
+    "scan_time": "2026-09-30T16:28:44.037352-04:00",
+    "summary": {
+        "total_findings": 9,
+        "severity_counts": {
+            "CRITICAL": 0,
+            "HIGH": 0,
+            "MEDIUM": 0,
+            "LOW": 4,
+            "INFO": 5,
+            "ERROR": 0
+        }
+    },
+    "findings": [
+        {
+            "severity": "LOW",
+            "title": "Missing Security Header: Content-Security-Policy",
+            "category": "Security Headers",
+            "endpoint": "http://127.0.0.1:5000/",
+            "evidence": "The response does not contain the Content-Security-Policy header.",
+            "recommendation": "Consider configuring the Content-Security-Policy header according to the application's security requirements.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "LOW",
+            "title": "Missing Security Header: X-Content-Type-Options",
+            "category": "Security Headers",
+            "endpoint": "http://127.0.0.1:5000/",
+            "evidence": "The response does not contain the X-Content-Type-Options header.",
+            "recommendation": "Consider configuring the X-Content-Type-Options header according to the application's security requirements.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "LOW",
+            "title": "Missing Security Header: X-Frame-Options",
+            "category": "Security Headers",
+            "endpoint": "http://127.0.0.1:5000/",
+            "evidence": "The response does not contain the X-Frame-Options header.",
+            "recommendation": "Consider configuring the X-Frame-Options header according to the application's security requirements.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "LOW",
+            "title": "Missing Security Header: Referrer-Policy",
+            "category": "Security Headers",
+            "endpoint": "http://127.0.0.1:5000/",
+            "evidence": "The response does not contain the Referrer-Policy header.",
+            "recommendation": "Consider configuring the Referrer-Policy header according to the application's security requirements.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "INFO",
+            "title": "Server Header Exposed",
+            "category": "Response Analysis",
+            "endpoint": "http://127.0.0.1:5000/",
+            "evidence": "Server header value: Werkzeug/3.1.5 Python/3.13.12",
+            "recommendation": "Consider minimizing unnecessary server information disclosure.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "INFO",
+            "title": "Content Type Identified",
+            "category": "Response Analysis",
+            "endpoint": "http://127.0.0.1:5000/",
+            "evidence": "Content-Type: text/html; charset=utf-8",
+            "recommendation": "Review whether the returned content type is expected.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "INFO",
+            "title": "Endpoint Discovered",
+            "category": "Discovery",
+            "endpoint": "http://127.0.0.1:5000/api/users/1",
+            "evidence": "http://127.0.0.1:5000/api/users/1 returned HTTP 401.",
+            "recommendation": "Review the discovered endpoint and determine whether it exposes sensitive functionality or data.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "INFO",
+            "title": "Authentication Required",
+            "category": "Authentication",
+            "endpoint": "http://127.0.0.1:5000/api/users/1",
+            "evidence": "http://127.0.0.1:5000/api/users/1 returned HTTP 401 without authentication.",
+            "recommendation": "Authentication appears to be enforced.",
+            "confidence": "High",
+            "method": null,
+            "status_code": null,
+            "response_headers": null
+        },
+        {
+            "severity": "INFO",
+            "title": "Object-Level Authorization Enforced",
+            "category": "Authorization",
+            "endpoint": "http://127.0.0.1:5000/api/users/2",
+            "evidence": "Baseline object 1 returned HTTP 200. Object 2 returned HTTP 403.",
+            "recommendation": "Authorization appears to be enforced for this object.",
+            "confidence": "High",
+            "method": "GET",
+            "status_code": 403,
+            "response_headers": null
+        }
+    ]
+}
